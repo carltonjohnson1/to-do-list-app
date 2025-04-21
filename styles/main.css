@@ -1,0 +1,371 @@
+/* === GLOBALS === */
+
+:root {
+  --secondaryBackground: #edeef0;
+  --listItemBackground: #dedfe3; 
+  --white: #fff;
+  --whiteText: #fff;
+  --text: #1E1E1E;
+  --tomato: #ff5945;
+  --orange: #FF9E45;
+  --heading: #001f52;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-size: 100%;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+color: var(--heading);
+}
+
+/* === CONTAINER === */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  width: 550px;
+  background: var(--white);
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+/* === HEADER / STATS === */
+
+.stats-container {
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid var(--orange);
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+}
+
+#progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--secondaryBackground);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#progress {
+  width: 80%;
+  height: 10px;
+  background-color: var(--orange);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#numbers {
+  width: 100px;
+  height: 100px;
+  background: var(--tomato);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--whiteText);
+}
+
+/* === FORM === */
+
+form {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 16px;
+  background-color: var(--secondaryBackground);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: var(--text);
+  font-size: 1.125rem;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tomato);
+  color: var(--whiteText);
+  font-size: 1.875rem;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* === TASK LIST === */
+
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+  list-style: none;
+ 
+}
+
+/* .task-list {
+
+} */
+
+.taskItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px; 
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  
+}
+
+.taskItem:hover {
+  transform: translateY(-2px);
+}
+
+#task-list .taskItem {
+  background-color: var(--listItemBackground);
+}
+
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.task p {
+  white-space: normal;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* === TASK STATE === */
+
+.taskItem p {
+  font-size: 1rem;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+  color: #cc0000;
+}
+
+
+/* === ICONS === */
+
+.taskItem img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.taskItem img:hover {
+  transform: scale(1.2);
+}
+
+
+/* === CUSTOM CHECKBOX === */
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--orange);
+  border-radius: 4px;
+  background-color: var(--white);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox:checked {
+  background-color: var(--orange);
+}
+
+.checkbox:checked::after {
+  content: '✔';
+  color: #121212;
+  font-size: 0.875;
+  position: absolute;
+  top: 1px;
+  left: 3px;
+}
+
+
+/* === GENERAL === */
+span.notepad img {
+display: inline-block;
+width: 50px;
+}
+
+.padding-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #121212, #001f52);
+  padding: 10px;
+}
+
+
+
+/* === CSS for screens below or equal to 600px wide - mobiles in mind  === */
+@media (max-width: 600px) {
+
+  /* === CONTAINER === */
+
+.container {
+  margin: 50px 0;
+  width: 100%;
+  background: var(--white);
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+/* === HEADER / STATS === */
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--orange);
+  gap: 25px;
+}
+
+
+#progressBar {
+  margin-top: 15px;
+}
+
+#numbers {
+  width: 65px;
+  height: 65px;
+  font-size: 1.5rem;
+}
+
+/* === FORM === */
+
+form {
+  margin-top: 40px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+
+/* === TASK LIST === */
+
+#task-list {
+  margin-top: 20px;
+}
+
+/* .task-list {
+
+} */
+
+.taskItem {
+  gap: 5px; 
+}
+
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.task p {
+  white-space: normal;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* === TASK STATE === */
+
+.taskItem p {
+  font-size: 1rem;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+  color: #cc0000;
+}
+
+
+/* === ICONS === */
+
+.taskItem img {
+display: flex;
+flex-direction: column;
+}
+
+/* === CUSTOM CHECKBOX === */
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--orange);
+
+}
+
+
+/* === GENERAL === */
+span.notepad img {
+width: 40px;
+}
+
+
+}
