@@ -84,8 +84,8 @@ const updateTasksList = () => {
                 <p>${task.text}</p>
             </div>
             <div class="icons">
-                <img src="https://github.com/carltonjohnson1/to-do-list-app/blob/main/images/edit.svg" onclick="editTask(${index})" />
-                <img src="https://github.com/carltonjohnson1/to-do-list-app/blob/main/images/bin.svg" onclick="deleteTask(${index})" />
+                <img src="../images/edit.png" onclick="editTask(${index})" />
+                <img src="../images/bin.png" onclick="deleteTask(${index})" />
             </div>
         </div>
         `;
