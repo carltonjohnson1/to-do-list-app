@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(storedTasks){
         storedTasks.forEach((task)=> tasks.push(task));
         updateTasksList();
+        updateStats();
     }
 });
 
@@ -84,8 +85,8 @@ const updateTasksList = () => {
                 <p>${task.text}</p>
             </div>
             <div class="icons">
-                <img src="images/edit.png" onclick="editTask(${index})" />
-                <img src="images/bin.png" onclick="deleteTask(${index})" />
+                <img src="images/edit.svg" onclick="editTask(${index})" />
+                <img src="images/bin.svg" onclick="deleteTask(${index})" />
             </div>
         </div>
         `;
